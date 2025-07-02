@@ -6,10 +6,12 @@ def get_mongodb_chat_history(
     collection_name: str,
     database_name: str = "llm-experts",
     connection_string: str = "mongodb://localhost:27017",
+    history_size: int | None = None,
 ) -> MongoDBChatMessageHistory:
     return MongoDBChatMessageHistory(
         session_id=session_id,
         connection_string=connection_string,
         database_name=database_name,
         collection_name=collection_name,
+        history_size=history_size,
     )
